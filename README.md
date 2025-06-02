@@ -36,3 +36,6 @@
 
     Нажмите "Delete" для удаления задачи
 
+## Ссылка на опубликованную версию
+
+https://gleblatyshev.github.io/TO-DO-LIST/index.html
