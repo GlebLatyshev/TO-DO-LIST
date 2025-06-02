@@ -1,15 +1,18 @@
 const express = require('express');
 const app = express();
 const port = 3081;
-const hbs = require('hbs');
 const path = require('path');
 
-app.use(express.static('public'));
-app.set('view engine', 'hbs');
-hbs.registerPartials(path.join(__dirname, 'views/partials'));
+// Указываем, что статические файлы находятся в папке public
+app.use(express.static(path.join(__dirname, 'public')));
 
+// Указываем, где находятся наши шаблоны (views)
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
+
+// Маршрут для главной страницы
 app.get('/', function(req, res) {
-    res.render('index.hbs');
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
 app.listen(port, '127.0.0.1', function() {

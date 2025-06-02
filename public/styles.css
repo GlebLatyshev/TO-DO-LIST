@@ -5,11 +5,11 @@ body {
     padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
 }
 
-.todo-container {
+.code-container {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -36,6 +36,11 @@ h1 {
     border: 1px solid #dddddd;
     border-radius: 4px;
     font-size: 16px;
+    outline: none;
+}
+
+#taskInput:focus {
+    border-color: #4CAF50;
 }
 
 #addTaskBtn {
@@ -50,7 +55,7 @@ h1 {
 }
 
 #addTaskBtn:hover {
-    background-color: #458849;
+    background-color: #45a049;
 }
 
 #taskList {
@@ -63,7 +68,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 12px;
     border-bottom: 1px solid #eeeeee;
     transition: background-color 0.2s;
 }
@@ -76,6 +81,7 @@ h1 {
     flex-grow: 1;
     margin-left: 10px;
     cursor: pointer;
+    word-break: break-word;
 }
 
 .completed {
@@ -91,6 +97,7 @@ h1 {
     padding: 5px 10px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-left: 10px;
 }
 
 .delete-btn:hover {
