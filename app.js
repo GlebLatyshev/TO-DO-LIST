@@ -1,20 +1,16 @@
 const express = require('express');
-const app = express();
-const port = 3081;
 const path = require('path');
+const app = express();
+const port = 3000;
 
-// Указываем, что статические файлы находятся в папке public
-app.use(express.static(path.join(__dirname, 'public')));
+// Раздача статических файлов
+app.use(express.static(path.join(__dirname)));
 
-// Указываем, где находятся наши шаблоны (views)
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html');
-
-// Маршрут для главной страницы
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+// Все запросы перенаправляем на index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(port, '127.0.0.1', function() {
-    console.log('Server start http://localhost:%s', port);
+app.listen(port, () => {
+    console.log(`Сервер запущен на http://localhost:${port}`);
 });
