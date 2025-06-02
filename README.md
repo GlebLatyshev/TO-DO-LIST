@@ -38,4 +38,4 @@
 
 ## Ссылка на опубликованную версию
 
-https://gleblatyshev.github.io/TO-DO-LIST/index.html
+https://gleblatyshev.github.io/TO-DO-LIST/
